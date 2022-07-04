@@ -5,5 +5,6 @@ class Solution(object):
         :rtype: List[int]
         """
         n = len(nums)
-        allnums = [i for i in range(1, n+1) if i not in nums]
-        return allnums
+        allnums = set([i for i in range(1, n+1)])
+        nums = set(nums)
+        return list(allnums.difference(nums))
